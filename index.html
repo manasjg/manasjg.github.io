@@ -121,6 +121,9 @@
   .project li { margin-bottom: 6px; }
   .project li::marker { color: var(--blue); }
   .project li b { color: var(--blue); }
+  .more { display: none; font: inherit; font-size: 15px; font-weight: 600; color: var(--blue); background: none; border: none; border-bottom: 2px solid var(--yellow); padding: 0 0 1px; margin: 2px 0 12px; cursor: pointer; }
+  .more::after { content: " \25BE"; }
+  .project.open .more::after { content: " \25B4"; }
   .links { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
   .links a { font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 2px solid var(--yellow); }
   .links a:hover { background: var(--yellow-soft); }
@@ -175,15 +178,16 @@
     nav a:first-child { margin-left: 0; }
     .name-mark { white-space: nowrap; font-size: 16px; }
     nav a.hide-sm { display: none; }
-    .intro { grid-template-columns: 76px 1fr; column-gap: 16px; row-gap: 0; padding: 28px 0 36px; align-items: center; }
+    .intro { grid-template-columns: 68px 1fr; column-gap: 14px; row-gap: 0; padding: 18px 0 36px; align-items: center; }
     .intro > div:first-child { display: contents; }
-    .photo { grid-column: 1; grid-row: 1; width: 76px; height: 76px; font-size: 26px; border-width: 3px; }
+    .photo { grid-column: 1; grid-row: 1; width: 68px; height: 68px; font-size: 24px; border-width: 3px; }
     .intro h1 { grid-column: 2; grid-row: 1; font-size: 32px; margin-bottom: 0; }
     .intro .role, .intro p, .intro .actions { grid-column: 1 / -1; }
-    .intro .role { order: 1; font-size: 19px; margin: 16px 0 0; }
-    .intro .actions { order: 2; margin: 18px 0 24px; gap: 10px; }
+    .intro .role { font-size: 19px; margin: 12px 0 10px; }
+    .intro p { line-height: 1.55; }
+    .intro p[style] { margin-top: 8px !important; }
+    .intro .actions { margin-top: 16px; gap: 10px; }
     .intro .actions .btn { padding: 11px 14px; font-size: 14px; }
-    .intro p { order: 3; }
     .numbers { grid-template-columns: 1fr 1fr; }
     .num:nth-child(2) { border-right: none; }
     .num:nth-child(1), .num:nth-child(2) { border-bottom: 2px solid var(--ink); }
@@ -191,6 +195,14 @@
     .skills { grid-template-columns: 1fr; }
     .tools { grid-template-columns: 1fr; }
     .project { padding: 20px; }
+    .project ul { display: none; }
+    .project.open ul { display: block; }
+    .project .stack { display: none; }
+    .project.open .stack { display: flex; }
+    .project .more { margin-top: 4px; }
+    .project .links { margin-top: 10px; gap: 8px; }
+    .project .links a { padding: 8px 12px; font-size: 14px; }
+    .more { display: inline-block; }
     .contact { padding: 30px 22px; }
   }
   /* Stories */
@@ -375,6 +387,7 @@
       </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span><span class="chip">Remotion (React/TSX)</span><span class="chip">ElevenLabs</span><span class="chip">LangFuse</span></div>
       <div class="stack"><span class="stack-label">Outreach</span><span class="chip">GPT</span><span class="chip">Claude</span><span class="chip">Airtable</span></div>
+      <button class="more" type="button" aria-expanded="false">Show details</button>
       <div class="links">
         <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
         <a href="https://github.com/outscal/video-generator" target="_blank" rel="noopener">See the code</a>
@@ -395,6 +408,7 @@
         <li><b>Where it is:</b> I'm building this on my own. Right now friends and family are trying it and giving me feedback, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</li>
       </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span></div>
+      <button class="more" type="button" aria-expanded="false">Show details</button>
       <div class="links">
         <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try it live</a>
       </div>
@@ -411,6 +425,7 @@
         <li>Still live on Poki.</li>
       </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Babylon.js</span><span class="chip">WebGL</span><span class="chip">GLTF</span></div>
+      <button class="more" type="button" aria-expanded="false">Show details</button>
       <div class="links">
         <a href="https://poki.com/en/g/temple-run-2" target="_blank" rel="noopener">Play it on Poki</a>
       </div>
@@ -554,6 +569,15 @@
   window.addEventListener('hashchange',function(){ openFromHash(false); });
   openFromHash(false);
   window.addEventListener('load',function(){ openFromHash(true); });
+
+  // Phones: project details open and close
+  document.querySelectorAll('.project .more').forEach(function(b){
+    b.addEventListener('click',function(){
+      var card=b.closest('.project'), open=card.classList.toggle('open');
+      b.setAttribute('aria-expanded',open);
+      b.textContent=open?'Show less':'Show details';
+    });
+  });
 
   // mailto does nothing without a mail app set up, so also copy the address
   var btn=document.getElementById('email-btn'); if(!btn) return;
