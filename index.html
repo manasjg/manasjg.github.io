@@ -52,6 +52,7 @@
   .name-row { display: flex; align-items: center; gap: 10px; }
   .li-link { color: #0a66c2; display: flex; line-height: 0; }
   .li-link:hover { color: var(--blue); }
+  nav { display: flex; white-space: nowrap; }
   nav a {
     color: var(--ink); text-decoration: none; font-size: 15px; margin-left: 22px;
   }
@@ -170,13 +171,19 @@
 
   @media (max-width: 760px) {
     body { font-size: 16px; }
-    nav a { margin-left: 14px; font-size: 14px; }
+    nav a { margin-left: 16px; font-size: 14px; }
+    nav a:first-child { margin-left: 0; }
     .name-mark { white-space: nowrap; font-size: 16px; }
     nav a.hide-sm { display: none; }
-    .intro { grid-template-columns: 1fr; padding: 40px 0 36px; gap: 24px; }
-    .photo { width: 120px; height: 120px; font-size: 38px; order: -1; border-width: 4px; }
-    .intro h1 { font-size: 34px; }
-    .intro .role { font-size: 19px; }
+    .intro { grid-template-columns: 76px 1fr; column-gap: 16px; row-gap: 0; padding: 28px 0 36px; align-items: center; }
+    .intro > div:first-child { display: contents; }
+    .photo { grid-column: 1; grid-row: 1; width: 76px; height: 76px; font-size: 26px; border-width: 3px; }
+    .intro h1 { grid-column: 2; grid-row: 1; font-size: 32px; margin-bottom: 0; }
+    .intro .role, .intro p, .intro .actions { grid-column: 1 / -1; }
+    .intro .role { order: 1; font-size: 19px; margin: 16px 0 0; }
+    .intro .actions { order: 2; margin: 18px 0 24px; gap: 10px; }
+    .intro .actions .btn { padding: 11px 14px; font-size: 14px; }
+    .intro p { order: 3; }
     .numbers { grid-template-columns: 1fr 1fr; }
     .num:nth-child(2) { border-right: none; }
     .num:nth-child(1), .num:nth-child(2) { border-bottom: 2px solid var(--ink); }
@@ -225,8 +232,9 @@
   .p-body li { margin-bottom: 6px; }
   .p-body li::marker { color: var(--blue); }
   @media (max-width: 760px) {
-    .p-tabs { display: flex; overflow-x: auto; }
-    .p-tab { flex: 0 0 auto; padding: 12px 14px; }
+    .p-tabs { grid-template-columns: repeat(6, 1fr); gap: 2px; background: var(--ink); }
+    .p-tab { grid-column: span 2; border-right: none; padding: 10px 12px 12px; font-size: 14px; }
+    .p-tab:nth-child(n+4) { grid-column: span 3; }
     .p-panel { grid-template-columns: 1fr; }
     .p-stat b { font-size: 26px; }
     .p-body { padding: 20px; }
