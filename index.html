@@ -62,6 +62,7 @@
   .intro h1 { font-size: 44px; line-height: 1.15; font-weight: 700; margin-bottom: 14px; }
   .intro .role { font-size: 22px; font-weight: 500; color: var(--blue); margin-bottom: 18px; }
   .intro p { color: var(--grey); max-width: 560px; }
+  .intro p b { color: var(--ink); font-weight: 600; }
   .photo {
     width: 190px; height: 190px; border-radius: 50%;
     background: var(--blue); color: var(--yellow);
@@ -115,6 +116,10 @@
   }
   .project p { margin-bottom: 10px; }
   .project .mine { color: var(--grey); font-size: 15.5px; }
+  .project ul { padding-left: 20px; margin-bottom: 14px; }
+  .project li { margin-bottom: 6px; }
+  .project li::marker { color: var(--blue); }
+  .project li b { color: var(--blue); }
   .links { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
   .links a { font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 2px solid var(--yellow); }
   .links a:hover { background: var(--yellow-soft); }
@@ -253,7 +258,7 @@
     <div>
       <h1>Hi, I'm Manas.</h1>
       <div class="role">I'm a product manager who works on AI and growth.</div>
-      <p>For four years I was the only product person at an early-stage startup, working directly with the founder. I built a job portal to 140,000 monthly users without ad spend, launched a subscription business, and later made an AI video pipeline produce usable output. Before that, I spent three years making games, including Temple Run 2.</p>
+      <p>For four years I was the <b>only product person at an early-stage startup</b>, working directly with the founder. I built a job portal to <b>140,000 monthly users without ad spend</b>, <b>launched a subscription business</b>, and later made an <b>AI video pipeline</b> produce usable output. Before that, I spent three years making games, including <b>Temple Run 2</b>.</p>
       <p style="margin-top:12px">I'm looking for product or founder's office roles in Mumbai or remote.</p>
       <div class="actions">
         <a class="btn btn-yellow" href="Manas_Gangwani_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
@@ -353,9 +358,13 @@
         <h3>AI Video Generator</h3>
         <span class="tag">Outscal, 2025 to 2026</span>
       </div>
-      <p>Turns a topic into an animated explainer video. Five AI agents each own one step: one writes the script, one directs each scene, one prepares the voiceover, one finds the visuals, and one writes the code that animates it. An orchestrator reviews every step and sends weak work back before moving on.</p>
-      <p>AI gives a different result every time you run it. My job was to make the result good every time. I wrote the prompts and examples each agent learns from, tested which model works best for each step, and fixed the cases where the output broke.</p>
-      <p class="mine">What I did: owned the output quality of the whole pipeline, and built the outreach system to sell it. The code was a team effort.</p>
+      <p>Turns a topic into an animated explainer video.</p>
+      <ul>
+        <li>Five AI agents each own one step: one writes the script, one directs each scene, one prepares the voiceover, one finds the visuals, and one writes the code that animates it.</li>
+        <li>An orchestrator reviews every step and sends weak work back before moving on.</li>
+        <li>AI gives a different result every time you run it. My job was to make the result good every time. I wrote the prompts and examples each agent learns from, tested which model works best for each step, and fixed the cases where the output broke.</li>
+        <li><b>What I did:</b> owned the output quality of the whole pipeline, and built the outreach system to sell it. The code was a team effort.</li>
+      </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span><span class="chip">Remotion (React/TSX)</span><span class="chip">ElevenLabs</span><span class="chip">LangFuse</span></div>
       <div class="stack"><span class="stack-label">Outreach</span><span class="chip">GPT</span><span class="chip">Claude</span><span class="chip">Airtable</span></div>
       <div class="links">
@@ -370,9 +379,13 @@
         <h3>Career Mentor</h3>
         <span class="tag">Started Aug 2026</span>
       </div>
-      <p>An AI mentor for students aged 14 to 18 in India. Most students pick engineering or medicine because it feels safe, not because they have tried it. This mentor gives them small, real tasks from a career, so they find out what the work is actually like before they commit years to it. It never tells them what to choose.</p>
-      <p>Why I'm building it: I had the same problem when I was almost 18. I knew I wanted to get into game development, but there was nobody to tell me how to break into the industry.</p>
-      <p class="mine">Where it is: I'm building this on my own. Right now friends and family are trying it and giving me feedback, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</p>
+      <p>An AI mentor for students aged 14 to 18 in India.</p>
+      <ul>
+        <li>Most students pick engineering or medicine because it feels safe, not because they have tried it.</li>
+        <li>This mentor gives them small, real tasks from a career, so they find out what the work is actually like before they commit years to it. It never tells them what to choose.</li>
+        <li><b>Why I'm building it:</b> I had the same problem when I was almost 18. I knew I wanted to get into game development, but there was nobody to tell me how to break into the industry.</li>
+        <li><b>Where it is:</b> I'm building this on my own. Right now friends and family are trying it and giving me feedback, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</li>
+      </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span></div>
       <div class="links">
         <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try it live</a>
@@ -384,7 +397,11 @@
         <h3>Temple Run 2 on the web</h3>
         <span class="tag">Xansr, 2021</span>
       </div>
-      <p>Helped bring Temple Run 2 to the browser. We made the game six times smaller and made new areas load while you play, so people could start much faster. Still live on Poki.</p>
+      <p>Helped bring Temple Run 2 to the browser.</p>
+      <ul>
+        <li>We made the game six times smaller and made new areas load while you play, so people could start much faster.</li>
+        <li>Still live on Poki.</li>
+      </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Babylon.js</span><span class="chip">WebGL</span><span class="chip">GLTF</span></div>
       <div class="links">
         <a href="https://poki.com/en/g/temple-run-2" target="_blank" rel="noopener">Play it on Poki</a>
