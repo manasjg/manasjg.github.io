@@ -127,6 +127,16 @@
   .job p + p { margin-top: 8px; }
   .edu { margin-top: 22px; color: var(--grey); font-size: 15.5px; }
 
+  /* Tools */
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .tool-group { background: var(--blue-soft); border-radius: 6px; padding: 20px; }
+  .tool-group h3 { font-size: 17px; margin-bottom: 12px; color: var(--blue); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 14px; font-weight: 500; padding: 4px 11px; border-radius: 20px; background: var(--white); border: 1px solid var(--line); white-space: nowrap; }
+  .stack { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
+  .stack-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-right: 4px; }
+  .stack .chip { font-size: 13px; background: var(--blue-soft); border-color: var(--blue-soft); color: var(--blue); }
+
   /* Skills */
   .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .skill { background: var(--blue-soft); border-radius: 6px; padding: 20px; }
@@ -160,6 +170,7 @@
     .num:nth-child(1), .num:nth-child(2) { border-bottom: 2px solid var(--ink); }
     .job { grid-template-columns: 1fr; gap: 4px; }
     .skills { grid-template-columns: 1fr; }
+    .tools { grid-template-columns: 1fr; }
     .project { padding: 20px; }
     .contact { padding: 30px 22px; }
   }
@@ -222,6 +233,7 @@
       <a href="#work" class="hide-sm">Work</a>
       <a href="#pillars" class="hide-sm">About</a>
       <a href="#stories" class="hide-sm">Stories</a>
+      <a href="#tools" class="hide-sm">Tools</a>
       <a href="Manas_Gangwani_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -261,7 +273,7 @@
       <div class="p-body">
         <h3>I make AI output good enough to ship.</h3>
         <ul>
-          <li>Owned output quality on an AI video generator where five AI agents work in a chain to turn a script into a video.</li>
+          <li>Owned output quality on an AI video generator where five AI agents turn a topic into a finished video.</li>
           <li>Built a B2B outreach system with AI doing research and writing. It got a 5% reply rate.</li>
           <li>Now building Career Mentor on my own, an AI mentor for Indian students aged 14 to 18.</li>
         </ul>
@@ -334,9 +346,11 @@
         <h3>AI Video Generator</h3>
         <span class="tag">Outscal, 2025 to 2026</span>
       </div>
-      <p>Turns a text script into an animated explainer video. Five AI agents work in a chain, from planning the video to writing the code that animates it.</p>
+      <p>Turns a topic into an animated explainer video. Five AI agents each own one step: one writes the script, one directs each scene, one prepares the voiceover, one finds the visuals, and one writes the code that animates it. An orchestrator reviews every step and sends weak work back before moving on.</p>
       <p>AI gives a different result every time you run it. My job was to make the result good every time. I wrote the prompts and examples each agent learns from, tested which model works best for each step, and fixed the cases where the output broke.</p>
       <p class="mine">What I did: owned the output quality of the whole pipeline, and built the outreach system to sell it. The code was a team effort.</p>
+      <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span><span class="chip">Remotion (React/TSX)</span><span class="chip">ElevenLabs</span><span class="chip">LangFuse</span></div>
+      <div class="stack"><span class="stack-label">Outreach</span><span class="chip">GPT</span><span class="chip">Claude</span><span class="chip">Airtable</span></div>
       <div class="links">
         <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
         <a href="https://github.com/outscal/video-generator" target="_blank" rel="noopener">See the code</a>
@@ -351,6 +365,7 @@
       </div>
       <p>An AI mentor for students aged 14 to 18 in India. Most students pick engineering or medicine because it feels safe, not because they have tried it. This mentor gives them small, real tasks from a career, so they find out what the work is actually like before they commit years to it. It never tells them what to choose.</p>
       <p class="mine">Where it is: I'm building this on my own. A small group of students is using it right now, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</p>
+      <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span></div>
       <div class="links">
         <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try it live</a>
       </div>
@@ -362,6 +377,7 @@
         <span class="tag">Xansr, 2021</span>
       </div>
       <p>Helped bring Temple Run 2 to the browser. We made the game six times smaller and made new areas load while you play, so people could start much faster. Still live on Poki.</p>
+      <div class="stack"><span class="stack-label">Built with</span><span class="chip">Babylon.js</span><span class="chip">WebGL</span><span class="chip">GLTF</span></div>
       <div class="links">
         <a href="https://poki.com/en/g/temple-run-2" target="_blank" rel="noopener">Play it on Poki</a>
       </div>
@@ -396,11 +412,33 @@
       <summary><span class="story-label">AI</span><h3>Why our AI videos were boring, and how I fixed it</h3><span class="story-toggle" aria-hidden="true"></span></summary>
       <div class="story-body">
       <p><b>The problem.</b> Our video pipeline worked, but the videos were flat. The pictures moved and the words were right, but nothing felt like a story.</p>
-      <p><b>What I did.</b> I traced it back to the first agent, the one that plans the video. Its instructions were full of technical rules meant to help the later agents write code. With all that in its head, it played safe and wrote dull, engineering-style scripts. I cut its context down to what a director actually needs, like story, pacing, and visuals, and gave it better examples to learn from.</p>
+      <p><b>What I did.</b> I traced it back to the direction agent, the one that plans each scene. Its instructions were full of technical rules meant to help the later agents write code. With all that in its head, it played safe and wrote dull, engineering-style scripts. I cut its context down to what a director actually needs, like story, pacing, and visuals, and gave it better examples to learn from.</p>
       <p><b>What happened.</b> The scripts started reading like actual video plans, with a hook, a build-up, and scenes that changed with the story.</p>
       <p class="takeaway">What I learned: more context does not make AI better. Each agent should only know what its own job needs.</p>
       </div>
     </details>
+  </section>
+
+  <section id="tools">
+    <h2>Tools I use</h2>
+    <div class="tools">
+      <div class="tool-group">
+        <h3>AI</h3>
+        <div class="chips"><span class="chip">Claude</span><span class="chip">Claude Code</span><span class="chip">MCP</span><span class="chip">GPT</span><span class="chip">ElevenLabs</span><span class="chip">LangFuse</span></div>
+      </div>
+      <div class="tool-group">
+        <h3>Analytics</h3>
+        <div class="chips"><span class="chip">Google Analytics</span><span class="chip">PostHog</span><span class="chip">Microsoft Clarity</span><span class="chip">Kibana</span></div>
+      </div>
+      <div class="tool-group">
+        <h3>Building</h3>
+        <div class="chips"><span class="chip">Remotion (React/TSX)</span><span class="chip">Unity3D / C#</span><span class="chip">Babylon.js</span><span class="chip">WebGL</span><span class="chip">GLTF</span></div>
+      </div>
+      <div class="tool-group">
+        <h3>Growth and ops</h3>
+        <div class="chips"><span class="chip">Google Ads</span><span class="chip">Airtable</span><span class="chip">Trello</span></div>
+      </div>
+    </div>
   </section>
 
   <section id="experience">
