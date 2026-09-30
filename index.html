@@ -42,6 +42,9 @@
   }
   .name-mark { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; }
   .name-mark span { background: var(--yellow); padding: 0 4px; }
+  .name-row { display: flex; align-items: center; gap: 10px; }
+  .li-link { color: #0a66c2; display: flex; line-height: 0; }
+  .li-link:hover { color: var(--blue); }
   nav a {
     color: var(--ink); text-decoration: none; font-size: 15px; margin-left: 22px;
   }
@@ -89,6 +92,7 @@
     display: inline-block; border-bottom: 5px solid var(--yellow); line-height: 1.2;
   }
   .section-note { color: var(--grey); margin: 10px 0 28px; }
+  #work h2 { margin-bottom: 28px; }
 
   /* Projects */
   .project {
@@ -107,6 +111,11 @@
   .links { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
   .links a { font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 2px solid var(--yellow); }
   .links a:hover { background: var(--yellow-soft); }
+  .project .links { gap: 12px; }
+  .project .links a { border: 2px solid var(--ink); border-radius: 6px; padding: 9px 16px; background: var(--white); color: var(--ink); }
+  .project .links a:first-child { background: var(--yellow); }
+  .project .links a:hover { background: var(--yellow-soft); }
+  .project .links a:first-child:hover { background: #ffdc4a; }
 
   /* Experience */
   .job { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
@@ -155,9 +164,19 @@
     .contact { padding: 30px 22px; }
   }
   /* Stories */
-  .story { border-top: 2px solid var(--ink); padding: 26px 0 30px; }
+  .story { border-top: 2px solid var(--ink); scroll-margin-top: 80px; }
   .story:last-child { border-bottom: 2px solid var(--ink); }
-  .story-label { display: inline-block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--yellow); padding: 2px 8px; margin-bottom: 10px; }
+  .story summary { list-style: none; cursor: pointer; padding: 22px 48px 22px 0; position: relative; }
+  .story summary::-webkit-details-marker { display: none; }
+  .story summary:hover h3 { color: var(--blue); }
+  .story summary h3 { margin-bottom: 0; }
+  .story-toggle { position: absolute; right: 4px; top: 50%; width: 30px; height: 30px; margin-top: -15px; border: 2px solid var(--ink); border-radius: 50%; }
+  .story-toggle::before, .story-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; background: var(--ink); }
+  .story-toggle::after { transform: rotate(90deg); transition: transform .15s; }
+  .story[open] .story-toggle { background: var(--yellow); }
+  .story[open] .story-toggle::after { transform: rotate(0deg); }
+  .story-body { padding: 0 0 28px; }
+  .story-label { display: table; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--yellow); padding: 2px 8px; margin-bottom: 10px; }
   .story h3 { font-size: 21px; line-height: 1.3; margin-bottom: 14px; }
   .story p { margin-bottom: 10px; }
   .story p b { color: var(--blue); }
@@ -195,7 +214,10 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="name-mark" href="#">Manas <span>Gangwani</span></a>
+    <div class="name-row">
+      <a class="name-mark" href="#">Manas <span>Gangwani</span></a>
+      <a class="li-link" href="https://www.linkedin.com/in/manas-gangwani" target="_blank" rel="noopener" aria-label="Manas Gangwani on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+    </div>
     <nav>
       <a href="#work" class="hide-sm">Work</a>
       <a href="#pillars" class="hide-sm">About</a>
@@ -239,7 +261,7 @@
       <div class="p-body">
         <h3>I make AI output good enough to ship.</h3>
         <ul>
-          <li>Owned output quality on an AI video generator where three agents plan, design, and code each video.</li>
+          <li>Owned output quality on an AI video generator where five AI agents work in a chain to turn a script into a video.</li>
           <li>Built a B2B outreach system with AI doing research and writing. It got a 5% reply rate.</li>
           <li>Now building Career Mentor on my own, an AI mentor for Indian students aged 14 to 18.</li>
         </ul>
@@ -260,7 +282,7 @@
           <li>Launched a subscription that reached 40 free trials a day in three months.</li>
           <li>Tried five business models in four years, working directly with the founder.</li>
         </ul>
-        <div class="links"><a href="#stories">Read the onboarding story</a></div>
+        <div class="links"><a href="#story-onboarding">Read the onboarding story</a></div>
       </div>
     </div>
 
@@ -305,21 +327,20 @@
   </section>
 
   <section id="work">
-    <h2>Work you can see</h2>
-    <p class="section-note">Click through and try them.</p>
+    <h2>What I have been up to</h2>
 
     <div class="project">
       <div class="project-head">
         <h3>AI Video Generator</h3>
         <span class="tag">Outscal, 2025 to 2026</span>
       </div>
-      <p>Turns a text script into an animated explainer video. Three AI agents work in a chain. One plans the video, one designs each scene, and one writes the code that animates it.</p>
+      <p>Turns a text script into an animated explainer video. Five AI agents work in a chain, from planning the video to writing the code that animates it.</p>
       <p>AI gives a different result every time you run it. My job was to make the result good every time. I wrote the prompts and examples each agent learns from, tested which model works best for each step, and fixed the cases where the output broke.</p>
       <p class="mine">What I did: owned the output quality of the whole pipeline, and built the outreach system to sell it. The code was a team effort.</p>
       <div class="links">
         <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
         <a href="https://github.com/outscal/video-generator" target="_blank" rel="noopener">See the code</a>
-        <a href="#story-director">Read one fix I made</a>
+        <a href="#story-director">Read about the biggest fix I made</a>
       </div>
     </div>
 
@@ -348,35 +369,38 @@
   </section>
 
   <section id="stories">
-    <h2>Three stories</h2>
-    <p class="section-note">Numbers tell you what happened. These tell you how I think.</p>
+    <h2>How I approach problems</h2>
+    <p class="section-note">Three stories that share how I think and approach problems.</p>
 
-    <div class="story">
-      <div class="story-label">Growth</div>
-      <h3>My onboarding guess was wrong, and the test showed it</h3>
+    <details class="story" id="story-onboarding">
+      <summary><span class="story-label">Growth</span><h3>Getting 80% of new signups through the job portal's onboarding</h3><span class="story-toggle" aria-hidden="true"></span></summary>
+      <div class="story-body">
       <p><b>The problem.</b> Our job portal needed three answers from every new user: their field, their experience level, and whether they wanted remote jobs only. We used these to match people to jobs. The question was how to ask without people leaving.</p>
       <p><b>What I did.</b> I assumed asking one question per screen would work best, because that feels lighter when you fill out a long form. So I tested it against putting all three questions on a single screen. We ran each version for a few days at a time, for about a month.</p>
       <p><b>What happened.</b> The single screen won. Most people who left the step-by-step version left on the very first question. They had just signed up, and one more screen felt like an extra ask. With the final flow, 70% of people who clicked Apply on a job signed up, and 80% of them finished onboarding.</p>
       <p class="takeaway">What I learned: when someone comes to do one thing, every extra screen costs you. Group the asks together instead of spreading them out.</p>
-    </div>
+      </div>
+    </details>
 
-    <div class="story">
-      <div class="story-label">Founder mode</div>
-      <h3>Launching a subscription with no payment system and no pricing</h3>
+    <details class="story" id="story-subscription">
+      <summary><span class="story-label">Founder mode</span><h3>Launching a subscription with no payment system and no pricing</h3><span class="story-toggle" aria-hidden="true"></span></summary>
+      <div class="story-body">
       <p><b>The problem.</b> The subscription product was ready, but there was no payment gateway on the site and no price decided. The founder had to leave suddenly. The team was tired after a long sprint, and only one junior developer was around.</p>
       <p><b>What I did.</b> I decided not to wait. I set up a simple PayPal payment link and picked the prices myself: 999 rupees for India and 19.99 dollars for everyone else. Then we launched.</p>
       <p><b>What happened.</b> It wasn't pretty, but people paid. That proved the model worked and gave the founder something real to build on when he came back. The subscription went on to reach 40 free trials a day within three months.</p>
       <p class="takeaway">What I learned: a rough launch that tests the real question beats a polished one that ships a month later.</p>
-    </div>
+      </div>
+    </details>
 
-    <div class="story" id="story-director">
-      <div class="story-label">AI</div>
-      <h3>Why our AI videos were boring, and how I fixed it</h3>
+    <details class="story" id="story-director">
+      <summary><span class="story-label">AI</span><h3>Why our AI videos were boring, and how I fixed it</h3><span class="story-toggle" aria-hidden="true"></span></summary>
+      <div class="story-body">
       <p><b>The problem.</b> Our video pipeline worked, but the videos were flat. The pictures moved and the words were right, but nothing felt like a story.</p>
       <p><b>What I did.</b> I traced it back to the first agent, the one that plans the video. Its instructions were full of technical rules meant to help the later agents write code. With all that in its head, it played safe and wrote dull, engineering-style scripts. I cut its context down to what a director actually needs, like story, pacing, and visuals, and gave it better examples to learn from.</p>
       <p><b>What happened.</b> The scripts started reading like actual video plans, with a hook, a build-up, and scenes that changed with the story.</p>
       <p class="takeaway">What I learned: more context does not make AI better. Each agent should only know what its own job needs.</p>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section id="experience">
@@ -427,7 +451,7 @@
     <h2>Let's talk</h2>
     <p>If you're hiring for product or growth, or just want to talk about AI, email is the easiest way to reach me.</p>
     <div class="actions">
-      <a class="btn btn-yellow" href="mailto:manasjg1996@gmail.com">manasjg1996@gmail.com</a>
+      <a class="btn btn-yellow" id="email-btn" href="mailto:manasjg1996@gmail.com" data-email="manasjg1996@gmail.com">manasjg1996@gmail.com</a>
       <a class="btn btn-plain" href="https://www.linkedin.com/in/manas-gangwani" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-plain" href="https://github.com/manasjg" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -447,6 +471,29 @@
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p);});});
   show('p1');
+})();
+</script>
+<script>
+(function(){
+  // Open a story when something links to it (e.g. #story-director)
+  function openFromHash(scroll){
+    var el=location.hash && document.getElementById(location.hash.slice(1));
+    if(el && el.tagName==='DETAILS'){ el.open=true; if(scroll) el.scrollIntoView({behavior:'instant'}); }
+  }
+  window.addEventListener('hashchange',function(){ openFromHash(false); });
+  openFromHash(false);
+  window.addEventListener('load',function(){ openFromHash(true); });
+
+  // mailto does nothing without a mail app set up, so also copy the address
+  var btn=document.getElementById('email-btn'); if(!btn) return;
+  var email=btn.dataset.email;
+  btn.addEventListener('click',function(){
+    function done(){
+      btn.textContent='Copied: '+email;
+      setTimeout(function(){btn.textContent=email;},2500);
+    }
+    if(navigator.clipboard){ navigator.clipboard.writeText(email).then(done,function(){}); }
+  });
 })();
 </script>
 </body>
