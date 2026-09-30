@@ -4,7 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manas Gangwani | Product Manager</title>
-<meta name="description" content="Manas Gangwani is a product manager in Mumbai who works on AI and growth. 7 years across ed-tech, gaming, and AI startups.">
+<meta name="description" content="Founding product manager at a lean startup, working on AI and growth. 7 years across ed-tech, gaming and AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manasjg.github.io/">
+<meta property="og:title" content="Manas Gangwani | Product Manager">
+<meta property="og:description" content="Founding product manager at a lean startup, working on AI and growth. 7 years across ed-tech, gaming and AI.">
+<meta property="og:image" content="https://manasjg.github.io/photo.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002c65'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23f5cf2d' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -193,31 +200,17 @@
   .story p b { color: var(--blue); }
   .story .takeaway { background: var(--blue-soft); border-left: 4px solid var(--blue); padding: 12px 16px; margin-top: 16px; margin-bottom: 0; font-weight: 500; }
   /* Pillars */
-  .p-tabs { display: grid; grid-template-columns: repeat(5, 1fr); border: 2px solid var(--ink); border-radius: 8px 8px 0 0; overflow: hidden; }
-  .p-tab { font: inherit; font-size: 15px; font-weight: 600; text-align: left; background: var(--white); color: var(--ink); border: none; border-right: 2px solid var(--ink); padding: 14px 14px 16px; cursor: pointer; line-height: 1.3; }
-  .p-tab:last-child { border-right: none; }
-  .p-tab:hover { background: var(--yellow-soft); }
-  .p-tab.on { background: var(--yellow); }
-  .p-n { display: block; font-size: 13px; color: var(--blue); margin-bottom: 4px; }
-  .p-panel { display: grid; grid-template-columns: 240px 1fr; border: 2px solid var(--ink); border-top: none; }
-  .p-panel + .p-panel { margin-top: 12px; border-top: 2px solid var(--ink); }
-  .js .p-panel + .p-panel { margin-top: 0; border-top: none; }
-  .js .p-panel { display: none; border-radius: 0 0 8px 8px; }
-  .js .p-panel.on { display: grid; }
-  .p-stat { background: var(--blue); color: var(--white); padding: 26px 22px; }
-  .p-stat b { display: block; color: var(--yellow); font-size: 30px; line-height: 1.15; margin-bottom: 10px; }
-  .p-stat span { font-size: 15px; color: #d5deeb; line-height: 1.45; display: block; }
-  .p-body { padding: 24px 26px; }
-  .p-body h3 { font-size: 21px; margin-bottom: 12px; }
-  .p-body ul { padding-left: 20px; }
-  .p-body li { margin-bottom: 6px; }
-  .p-body li::marker { color: var(--blue); }
+  .pillar { display: grid; grid-template-columns: 300px 1fr; gap: 28px; padding: 22px 0; border-top: 2px solid var(--ink); }
+  .pillar:last-child { border-bottom: 2px solid var(--ink); }
+  .p-n { display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue); margin-bottom: 6px; }
+  .pillar h3 { font-size: 20px; line-height: 1.3; }
+  .pillar ul { padding-left: 20px; }
+  .pillar li { margin-bottom: 6px; }
+  .pillar li:last-child { margin-bottom: 0; }
+  .pillar li::marker { color: var(--blue); }
+  .pillar li a { font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--yellow); white-space: nowrap; }
   @media (max-width: 760px) {
-    .p-tabs { display: flex; overflow-x: auto; }
-    .p-tab { flex: 0 0 auto; padding: 12px 14px; }
-    .p-panel { grid-template-columns: 1fr; }
-    .p-stat b { font-size: 26px; }
-    .p-body { padding: 20px; }
+    .pillar { grid-template-columns: 1fr; gap: 10px; }
   }
 </style>
 </head>
@@ -256,85 +249,60 @@
     <div class="photo"><img src="photo.jpg" alt="Photo of Manas Gangwani" onerror="this.parentNode.textContent='MG';"></div>
   </div>
 
+  <div class="numbers">
+    <div class="num"><b>140,000</b><span>monthly users on a job portal I built, with no ad spend</span></div>
+    <div class="num"><b>1&nbsp;month&nbsp;&rarr; 2&nbsp;days</b><span>to produce course content, after I brought in AI</span></div>
+    <div class="num"><b>0.7%&nbsp;&rarr; 1.3%</b><span>lead conversion at upGrad, recovered in 10 weeks</span></div>
+    <div class="num"><b>5%</b><span>reply rate on an AI-assisted B2B outreach system I built</span></div>
+  </div>
+
   <section id="pillars" class="pillars">
     <h2>Five things I bring</h2>
-    <p class="section-note">Pick one to see the proof.</p>
+    <p class="section-note">And the proof behind each one.</p>
 
-    <div class="p-tabs" role="tablist">
-      <button class="p-tab" role="tab" data-p="p1"><span class="p-n">01</span>AI</button>
-      <button class="p-tab" role="tab" data-p="p2"><span class="p-n">02</span>Growth and product</button>
-      <button class="p-tab" role="tab" data-p="p3"><span class="p-n">03</span>Mentorship</button>
-      <button class="p-tab" role="tab" data-p="p4"><span class="p-n">04</span>Engineering</button>
-      <button class="p-tab" role="tab" data-p="p5"><span class="p-n">05</span>Business sense</button>
+    <div class="pillar">
+      <div class="pillar-head"><span class="p-n">01 &middot; AI</span><h3>I make AI output good enough to ship.</h3></div>
+      <ul>
+        <li>Cut the scenes that needed manual fixes on an AI video generator from 6 in 10 to 3 in 10. <a href="#story-director">How</a></li>
+        <li>Built a B2B outreach system where AI does the research and writes the emails.</li>
+        <li>Brought AI into course production, taking it from about a month to two days.</li>
+      </ul>
     </div>
 
-    <div class="p-panel" id="p1" role="tabpanel">
-      <div class="p-stat"><b>1 month to 2 days</b><span>to produce course content, after I brought AI into the process</span></div>
-      <div class="p-body">
-        <h3>I make AI output good enough to ship.</h3>
-        <ul>
-          <li>Owned output quality on an AI video generator where five AI agents turn a topic into a finished video.</li>
-          <li>Built a B2B outreach system with AI doing research and writing. It got a 5% reply rate.</li>
-          <li>Now building Career Mentor on my own, an AI mentor for Indian students aged 14 to 18.</li>
-        </ul>
-        <div class="links">
-          <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
-          <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try the mentor</a>
-        </div>
-      </div>
+    <div class="pillar">
+      <div class="pillar-head"><span class="p-n">02 &middot; Growth and product</span><h3>I find what works, then grow it.</h3></div>
+      <ul>
+        <li>70,000 monthly users were still coming back to the job portal a year after we stopped working on it.</li>
+        <li>Tested the onboarding flow until 80% of new signups finished it. <a href="#story-onboarding">How</a></li>
+        <li>Launched a subscription that reached 40 free trials a day in three months. <a href="#story-subscription">How</a></li>
+        <li>Tried five business models in four years, working directly with the founder.</li>
+      </ul>
     </div>
 
-    <div class="p-panel" id="p2" role="tabpanel">
-      <div class="p-stat"><b>140,000</b><span>monthly users on a job portal I built from zero, with no ad spend</span></div>
-      <div class="p-body">
-        <h3>I find what works, then grow it.</h3>
-        <ul>
-          <li>70,000 monthly users were still coming back a year after we stopped working on the portal.</li>
-          <li>Tested the onboarding flow until 80% of new signups finished it.</li>
-          <li>Launched a subscription that reached 40 free trials a day in three months.</li>
-          <li>Tried five business models in four years, working directly with the founder.</li>
-        </ul>
-        <div class="links"><a href="#story-onboarding">Read the onboarding story</a></div>
-      </div>
+    <div class="pillar">
+      <div class="pillar-head"><span class="p-n">03 &middot; Mentorship</span><h3>I help people get unstuck.</h3></div>
+      <ul>
+        <li>Mentored 50+ bootcamp students at Outscal through mock interviews, project reviews, and one on one sessions.</li>
+        <li>Learned that most students who dropped out didn't leave because of money. Pressure from family and friends mattered more, so I started talking to parents too.</li>
+        <li>Coached a junior developer through his first project at Xansr.</li>
+      </ul>
     </div>
 
-    <div class="p-panel" id="p3" role="tabpanel">
-      <div class="p-stat"><b>50+</b><span>students mentored at Outscal on their way into game development</span></div>
-      <div class="p-body">
-        <h3>I help people get unstuck.</h3>
-        <ul>
-          <li>Ran mock interviews, project reviews, and one on one sessions for bootcamp students across India.</li>
-          <li>Learned that most students who dropped out didn't leave because of money. Pressure from family and friends mattered more, so I started talking to parents too.</li>
-          <li>Coached a junior developer through his first project at Xansr.</li>
-          <li>That experience is why I'm building Career Mentor today.</li>
-        </ul>
-      </div>
+    <div class="pillar">
+      <div class="pillar-head"><span class="p-n">04 &middot; Engineering</span><h3>I can talk to engineers in their language.</h3></div>
+      <ul>
+        <li>Three years writing code as a game developer before I moved into product.</li>
+        <li>Made the web version of Temple Run 2 six times smaller, then built live features for the mobile game.</li>
+        <li>Built and published my own mobile game, Hoppy Ball, on Android and iOS. Degree in Computer Engineering.</li>
+      </ul>
     </div>
 
-    <div class="p-panel" id="p4" role="tabpanel">
-      <div class="p-stat"><b>3 years</b><span>writing code as a game developer before I moved into product</span></div>
-      <div class="p-body">
-        <h3>I can talk to engineers in their language.</h3>
-        <ul>
-          <li>Helped bring Temple Run 2 to the browser and made it six times smaller. Still live on Poki.</li>
-          <li>Built live features for the mobile game, like the Pet System and the new player tutorial.</li>
-          <li>Built and published my own mobile game, Hoppy Ball, on Android and iOS.</li>
-          <li>Degree in Computer Engineering.</li>
-        </ul>
-        <div class="links"><a href="https://poki.com/en/g/temple-run-2" target="_blank" rel="noopener">Play Temple Run 2</a></div>
-      </div>
-    </div>
-
-    <div class="p-panel" id="p5" role="tabpanel">
-      <div class="p-stat"><b>Behind the counter</b><span>growing up in my family's furnishing store in Ulhasnagar</span></div>
-      <div class="p-body">
-        <h3>I learned business before I learned product.</h3>
-        <ul>
-          <li>My family sells curtains and sofa fabrics. I spent time at the counter making small sales.</li>
-          <li>The biggest lesson: most customers don't want the lowest price. They want to feel they got a good deal. We offered a small discount before they asked, and the sale closed.</li>
-          <li>I think about pricing, trust, and how people decide in the same way today.</li>
-        </ul>
-      </div>
+    <div class="pillar">
+      <div class="pillar-head"><span class="p-n">05 &middot; Business sense</span><h3>I learned business before I learned product.</h3></div>
+      <ul>
+        <li>Grew up around my family's furnishing store in Ulhasnagar, making small sales at the counter.</li>
+        <li>Learned that most customers don't want the lowest price. They want to feel they got a good deal. I think about pricing and trust the same way today.</li>
+      </ul>
     </div>
   </section>
 
@@ -361,10 +329,11 @@
     <div class="project">
       <div class="project-head">
         <h3>Career Mentor</h3>
-        <span class="tag">Early stage, started a few weeks ago</span>
+        <span class="tag">Started Aug 2026</span>
       </div>
       <p>An AI mentor for students aged 14 to 18 in India. Most students pick engineering or medicine because it feels safe, not because they have tried it. This mentor gives them small, real tasks from a career, so they find out what the work is actually like before they commit years to it. It never tells them what to choose.</p>
-      <p class="mine">Where it is: I'm building this on my own. A small group of students is using it right now, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</p>
+      <p>Why I'm building it: I had the same problem when I was almost 18. I knew I wanted to get into game development, but there was nobody to tell me how to break into the industry.</p>
+      <p class="mine">Where it is: I'm building this on my own. Right now friends and family are trying it and giving me feedback, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</p>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span></div>
       <div class="links">
         <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try it live</a>
@@ -413,7 +382,7 @@
       <div class="story-body">
       <p><b>The problem.</b> Our video pipeline worked, but the videos were flat. The pictures moved and the words were right, but nothing felt like a story.</p>
       <p><b>What I did.</b> I traced it back to the direction agent, the one that plans each scene. Its instructions were full of technical rules meant to help the later agents write code. With all that in its head, it played safe and wrote dull, engineering-style scripts. I cut its context down to what a director actually needs, like story, pacing, and visuals, and gave it better examples to learn from.</p>
-      <p><b>What happened.</b> The scripts started reading like actual video plans, with a hook, a build-up, and scenes that changed with the story.</p>
+      <p><b>What happened.</b> The scripts started reading like actual video plans, with a hook, a build-up, and scenes that changed with the story. I tracked how many scenes still needed manual editing or creative fixes after a video was generated. That went from about 6 in every 10 scenes to 3.</p>
       <p class="takeaway">What I learned: more context does not make AI better. Each agent should only know what its own job needs.</p>
       </div>
     </details>
@@ -498,19 +467,6 @@
   <footer>Manas Gangwani, Mumbai</footer>
 </main>
 
-<script>
-(function(){
-  var root=document.getElementById('pillars'); if(!root) return;
-  root.classList.add('js');
-  var tabs=root.querySelectorAll('.p-tab'), panels=root.querySelectorAll('.p-panel');
-  function show(id){
-    tabs.forEach(function(b){var on=b.dataset.p===id; b.classList.toggle('on',on); b.setAttribute('aria-selected',on);});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id);});
-  }
-  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p);});});
-  show('p1');
-})();
-</script>
 <script>
 (function(){
   // Open a story when something links to it (e.g. #story-director)
