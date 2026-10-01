@@ -121,6 +121,8 @@
   .project li { margin-bottom: 6px; }
   .project li::marker { color: var(--blue); }
   .project li b { color: var(--blue); }
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 4px 0 16px; border-radius: 6px; overflow: hidden; background: var(--ink); }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .more { display: none; font: inherit; font-size: 15px; font-weight: 600; color: var(--blue); background: none; border: none; border-bottom: 2px solid var(--yellow); padding: 0 0 1px; margin: 2px 0 12px; cursor: pointer; }
   .more::after { content: " \25BE"; }
   .project.open .more::after { content: " \25B4"; }
@@ -277,8 +279,8 @@
   <div class="intro">
     <div>
       <h1>Hi, I'm Manas.</h1>
-      <div class="role">I'm a product manager who works on AI and growth.</div>
-      <p>For four years I was the <b>only product person at an early-stage startup</b>, working directly with the founder. I built a job portal to <b>140,000 monthly users without ad spend</b>, <b>launched a subscription business</b>, and later made an <b>AI video pipeline</b> produce usable output. Before that, I spent three years making games, including <b>Temple Run 2</b>.</p>
+      <div class="role">We grew a jobs platform to <b>500,000+ users</b> without spending a rupee on ads. I was the only product person.</div>
+      <p>For four years I worked directly with the founder of an early-stage startup. I owned product and growth on the jobs platform, <b>launched a subscription business</b>, <b>sold to customers in the US and Europe</b>, and made a <b>five-agent AI pipeline</b> produce videos people paid for. Before that, I spent three years making games, including <b>Temple Run 2</b>.</p>
       <p style="margin-top:12px">I'm looking for product or founder's office roles in Mumbai or remote.</p>
       <div class="actions">
         <a class="btn btn-yellow" href="Manas_Gangwani_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
@@ -293,62 +295,60 @@
     <p class="section-note">Pick one to see the proof.</p>
 
     <div class="p-tabs" role="tablist">
-      <button class="p-tab" role="tab" data-p="p1"><span class="p-n">01</span>AI</button>
-      <button class="p-tab" role="tab" data-p="p2"><span class="p-n">02</span>Growth and product</button>
-      <button class="p-tab" role="tab" data-p="p3"><span class="p-n">03</span>Mentorship</button>
+      <button class="p-tab" role="tab" data-p="p1"><span class="p-n">01</span>Growth and product</button>
+      <button class="p-tab" role="tab" data-p="p2"><span class="p-n">02</span>AI</button>
+      <button class="p-tab" role="tab" data-p="p3"><span class="p-n">03</span>Sales</button>
       <button class="p-tab" role="tab" data-p="p4"><span class="p-n">04</span>Engineering</button>
-      <button class="p-tab" role="tab" data-p="p5"><span class="p-n">05</span>Business sense</button>
+      <button class="p-tab" role="tab" data-p="p5"><span class="p-n">05</span>Mentorship</button>
     </div>
 
     <div class="p-panel" id="p1" role="tabpanel">
-      <div class="p-stat"><b>1 month to 2 days</b><span>to produce course content, after I brought AI into the process</span></div>
-      <div class="p-body">
-        <h3>I make AI output good enough to ship.</h3>
-        <ul>
-          <li>Owned output quality on an AI video generator where five AI agents turn a topic into a finished video.</li>
-          <li>Built a B2B outreach system with AI doing research and writing. It got a 5% reply rate.</li>
-          <li>Now building Career Mentor on my own, an AI mentor for Indian students aged 14 to 18.</li>
-        </ul>
-        <div class="links">
-          <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
-          <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try the mentor</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-panel" id="p2" role="tabpanel">
-      <div class="p-stat"><b>140,000</b><span>monthly users on a job portal I built from zero, with no ad spend</span></div>
+      <div class="p-stat"><b>500,000+</b><span>users on a jobs platform, zero ad spend</span></div>
       <div class="p-body">
         <h3>I find what works, then grow it.</h3>
         <ul>
-          <li>70,000 monthly users were still coming back a year after we stopped working on the portal.</li>
+          <li>Peaked at 140,000 monthly users.</li>
+          <li>70,000 monthly users were still coming back a year after we stopped working on it.</li>
           <li>Tested the onboarding flow until 80% of new signups finished it.</li>
           <li>Launched a subscription that reached 40 free trials a day in three months.</li>
-          <li>Tried five business models in four years, working directly with the founder.</li>
         </ul>
         <div class="links"><a href="#story-onboarding">Read the onboarding story</a></div>
       </div>
     </div>
 
-    <div class="p-panel" id="p3" role="tabpanel">
-      <div class="p-stat"><b>50+</b><span>students mentored at Outscal on their way into game development</span></div>
+    <div class="p-panel" id="p2" role="tabpanel">
+      <div class="p-stat"><b>1 month to 2 days</b><span>to produce course content, after I brought AI into the process</span></div>
       <div class="p-body">
-        <h3>I help people get unstuck.</h3>
+        <h3>I turn AI demos into products people pay for.</h3>
         <ul>
-          <li>Ran mock interviews, project reviews, and one on one sessions for bootcamp students across India.</li>
-          <li>Learned that most students who dropped out didn't leave because of money. Pressure from family and friends mattered more, so I started talking to parents too.</li>
-          <li>Coached a junior developer through his first project at Xansr.</li>
-          <li>That experience is why I'm building Career Mentor today.</li>
+          <li>Owned output quality on an AI video generator where five AI agents turn a topic into a finished video.</li>
+          <li>Now building Career Mentor on my own, an AI mentor for Indian students aged 14 to 18.</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.youtube.com/watch?v=v0Ke7Wb4gf8&amp;t=27s" target="_blank" rel="noopener">Watch sample videos</a>
+          <a href="https://askthementor.vercel.app/" target="_blank" rel="noopener">Try the mentor</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-panel" id="p3" role="tabpanel">
+      <div class="p-stat"><b>100+</b><span>international sales calls, about 1 in 10 closed</span></div>
+      <div class="p-body">
+        <h3>I sell what I build.</h3>
+        <ul>
+          <li>Took 100+ sales calls with students in the US and Europe and closed about 10 onto our mentorship and course plans.</li>
+          <li>Built an AI outbound system for our video product: GPT researched prospects, Claude wrote the emails, Airtable ran the automation. It got a 5% reply rate and our first paying customers.</li>
+          <li>Early-stage sales is part of the product job. Every call told me what to fix next.</li>
         </ul>
       </div>
     </div>
 
     <div class="p-panel" id="p4" role="tabpanel">
-      <div class="p-stat"><b>3 years</b><span>writing code as a game developer before I moved into product</span></div>
+      <div class="p-stat"><b>6x smaller</b><span>Temple Run 2, rebuilt for the browser and still live on Poki</span></div>
       <div class="p-body">
         <h3>I can talk to engineers in their language.</h3>
         <ul>
-          <li>Helped bring Temple Run 2 to the browser and made it six times smaller. Still live on Poki.</li>
+          <li>Helped bring Temple Run 2 to the browser. We made it six times smaller, and it's still live on Poki.</li>
           <li>Built live features for the mobile game, like the Pet System and the new player tutorial.</li>
           <li>Built and published my own mobile game, Hoppy Ball, on Android and iOS.</li>
           <li>Degree in Computer Engineering.</li>
@@ -358,13 +358,14 @@
     </div>
 
     <div class="p-panel" id="p5" role="tabpanel">
-      <div class="p-stat"><b>Behind the counter</b><span>growing up in my family's furnishing store in Ulhasnagar</span></div>
+      <div class="p-stat"><b>50+</b><span>students mentored at Outscal on their way into game development</span></div>
       <div class="p-body">
-        <h3>I learned business before I learned product.</h3>
+        <h3>I help people get unstuck.</h3>
         <ul>
-          <li>My family sells curtains and sofa fabrics. I spent time at the counter making small sales.</li>
-          <li>The biggest lesson: most customers don't want the lowest price. They want to feel they got a good deal. We offered a small discount before they asked, and the sale closed.</li>
-          <li>I think about pricing, trust, and how people decide in the same way today.</li>
+          <li>Ran mock interviews, project reviews, and one on one sessions for bootcamp students across India.</li>
+          <li>Learned that most students who dropped out didn't leave because of money. Pressure from family and friends mattered more, so I started talking to parents too.</li>
+          <li>Coached a junior developer through his first project at Xansr.</li>
+          <li>That experience is why I'm building Career Mentor today.</li>
         </ul>
       </div>
     </div>
@@ -379,6 +380,7 @@
         <span class="tag">Outscal, 2025 to 2026</span>
       </div>
       <p>Turns a topic into an animated explainer video.</p>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/v0Ke7Wb4gf8?start=27" title="Sample video made with the AI Video Generator" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       <ul>
         <li>Five AI agents each own one step: one writes the script, one directs each scene, one prepares the voiceover, one finds the visuals, and one writes the code that animates it.</li>
         <li>An orchestrator reviews every step and sends weak work back before moving on.</li>
@@ -389,7 +391,7 @@
       <div class="stack"><span class="stack-label">Outreach</span><span class="chip">GPT</span><span class="chip">Claude</span><span class="chip">Airtable</span></div>
       <button class="more" type="button" aria-expanded="false">Show details</button>
       <div class="links">
-        <a href="https://www.youtube.com/@MobileGameDesign" target="_blank" rel="noopener">Watch sample videos</a>
+        <a href="https://www.youtube.com/watch?v=v0Ke7Wb4gf8&amp;t=27s" target="_blank" rel="noopener">Watch sample videos</a>
         <a href="https://github.com/outscal/video-generator" target="_blank" rel="noopener">See the code</a>
         <a href="#story-director">Read about the biggest fix I made</a>
       </div>
@@ -405,7 +407,9 @@
         <li>Most students pick engineering or medicine because it feels safe, not because they have tried it.</li>
         <li>This mentor gives them small, real tasks from a career, so they find out what the work is actually like before they commit years to it. It never tells them what to choose.</li>
         <li><b>Why I'm building it:</b> I had the same problem when I was almost 18. I knew I wanted to get into game development, but there was nobody to tell me how to break into the industry.</li>
-        <li><b>Where it is:</b> I'm building this on my own. Right now friends and family are trying it and giving me feedback, and I'm changing it based on what they tell me. Still early, and a lot of it is unsolved.</li>
+        <li><b>Why 14 to 18:</b> at this age the career decision is still open. After college, changing course costs money, time and family approval.</li>
+        <li><b>What I got wrong:</b> the mentor opened by asking "What do people come to you for?" Students aged 18 to 22 answer that easily, so I assumed 14 to 18 year olds would too. I had never mentored that age group, and most of them couldn't answer it.</li>
+        <li><b>What's next:</b> I'm planning to mentor this age group in person, to learn which questions actually work before I change the product.</li>
       </ul>
       <div class="stack"><span class="stack-label">Built with</span><span class="chip">Claude Code</span></div>
       <button class="more" type="button" aria-expanded="false">Show details</button>
@@ -447,7 +451,7 @@
     </details>
 
     <details class="story" id="story-subscription">
-      <summary><span class="story-label">Founder mode</span><h3>Launching a subscription with no payment system and no pricing</h3><span class="story-toggle" aria-hidden="true"></span></summary>
+      <summary><span class="story-label">Founder mode</span><h3>Launching a subscription with no payment system, no pricing, and no founder</h3><span class="story-toggle" aria-hidden="true"></span></summary>
       <div class="story-body">
       <p><b>The problem.</b> The subscription product was ready, but there was no payment gateway on the site and no price decided. The founder had to leave suddenly. The team was tired after a long sprint, and only one junior developer was around.</p>
       <p><b>What I did.</b> I decided not to wait. I set up a simple PayPal payment link and picked the prices myself: 999 rupees for India and 19.99 dollars for everyone else. Then we launched.</p>
@@ -498,7 +502,7 @@
       <div>
         <h3>Senior Manager, Product</h3>
         <div class="where">upGrad International</div>
-        <p>Owned product and growth for international markets. On day one, lead conversion had dropped sharply after a rushed release. Brought it back from 0.7% to 1.3% in 10 weeks with page speed fixes and quick UI improvements. Set up the team's roadmap and a simple system to track work.</p>
+        <p>Owned product and growth for international markets. Took over on day one after a rushed release cut lead conversion from 2% to 0.7%. Nearly doubled it to 1.3% in 10 weeks with page speed fixes and quick UI improvements. Set up the team's roadmap and a simple system to track work.</p>
       </div>
     </div>
 
@@ -507,8 +511,8 @@
       <div>
         <h3>Entrepreneur in Residence</h3>
         <div class="where">Outscal</div>
-        <p>The only product person, working directly with the founder. We tried five business models in four years: a free programme, a recruitment service, a job portal, a jobs-to-courses funnel, and subscriptions.</p>
-        <p>On the ed-tech side, I built the job portal, launched the subscription product, ran Google Ads, and took international sales calls for the US and Europe. When we brought AI into how we made course content, production time went from about a month to two days. That result pushed us to build an AI video product, where I owned output quality and built the B2B outreach system. Outscal shut down in April 2026.</p>
+        <p>The only product person, working directly with the founder. Ran five business models with the founder in four years, from a free programme and a recruitment service to a 500,000+ user jobs platform, subscriptions, and a B2B AI video product.</p>
+        <p>On the ed-tech side, we built the job portal and I owned its product and growth. I launched the subscription product and ran Google Ads. Took 100+ international sales calls and closed about 1 in 10. When we brought AI into how we made course content, production time went from about a month to two days. That result pushed us to build an AI video product, where I owned output quality and built the B2B outreach system. Outscal shut down in April 2026.</p>
       </div>
     </div>
 
